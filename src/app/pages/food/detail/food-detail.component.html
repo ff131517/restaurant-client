@@ -1,0 +1,52 @@
+<form nz-form class="food-form" [formGroup]="validateForm" (ngSubmit)="submitForm()">
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">菜品名称</nz-form-label>
+    <nz-form-control [nzSm]="4" [nzXs]="24" nzErrorTip="请输入正确的菜品名称">
+      <input nz-input formControlName="name" id="name" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="desc">菜品描述</nz-form-label>
+    <nz-form-control [nzSm]="4" [nzXs]="24" nzErrorTip="请输入正确的菜品描述">
+      <input nz-input formControlName="desc" id="desc" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="price">菜品价格</nz-form-label>
+    <nz-form-control [nzSm]="4" [nzXs]="24" nzErrorTip="请输入正确的菜品价格">
+      <nz-input-number nz-input formControlName="price" id="price"></nz-input-number>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="type">菜品类别</nz-form-label>
+    <nz-form-control [nzSm]="4" [nzXs]="24">
+      <nz-select style="width: 120px;" formControlName="type" id="type" nzAllowClear nzPlaceHolder="Choose">
+        <nz-option *ngFor="let option of listOfOption" [nzLabel]="option.label" [nzValue]="option.value"></nz-option>
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="img">菜品图片</nz-form-label>
+    <nz-form-control [nzSm]="4" [nzXs]="24" nzErrorTip="请输入正确的菜品图片">
+      <nz-upload
+        class="avatar-uploader"
+        nzAction="https://jsonplaceholder.typicode.com/posts/"
+        nzName="avatar"
+        nzListType="picture-card"
+        [nzShowUploadList]="false"
+        [nzBeforeUpload]="beforeUpload"
+        (nzChange)="handleChange($event)"
+      >
+        <ng-container *ngIf="!avatarUrl">
+          <i class="upload-icon" nz-icon [nzType]="loading ? 'loading' : 'plus'"></i>
+          <div class="ant-upload-text">Upload</div>
+        </ng-container>
+      </nz-upload>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item nz-row class="register-area">
+    <nz-form-control [nzSpan]="14" [nzOffset]="6">
+      <button nz-button nzType="primary">修改</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>

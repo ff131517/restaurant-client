@@ -1,12 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FoodComponent } from './food.component';
+import { FoodComponent } from './food-list.component';
 
 describe('FoodComponent', () => {
   let component: FoodComponent;
   let fixture: ComponentFixture<FoodComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(async(() => { 
     TestBed.configureTestingModule({
       declarations: [ FoodComponent ]
     })
