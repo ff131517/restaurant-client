@@ -2,7 +2,7 @@
   <nz-form-item>
     <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">菜品名称</nz-form-label>
     <nz-form-control [nzSm]="4" [nzXs]="24" nzErrorTip="请输入正确的菜品名称">
-      <input nz-input formControlName="name" id="name" />
+      <input nz-input  formControlName="name" id="name" />
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
@@ -27,7 +27,7 @@
   </nz-form-item>
   <nz-form-item>
     <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="img">菜品图片</nz-form-label>
-    <nz-form-control [nzSm]="4" [nzXs]="24" nzErrorTip="请输入正确的菜品图片">
+    <!-- <nz-form-control [nzSm]="4" [nzXs]="24" nzErrorTip="请输入正确的菜品图片">
       <nz-upload
         class="avatar-uploader"
         nzAction="https://jsonplaceholder.typicode.com/posts/"
@@ -42,11 +42,14 @@
           <div class="ant-upload-text">Upload</div>
         </ng-container>
       </nz-upload>
+    </nz-form-control> -->
+    <nz-form-control [nzSm]="12" [nzXs]="24" nzErrorTip="请输入正确的菜品名称">
+      <input nz-input formControlName="imgUrl" id="imgUrl" />
     </nz-form-control>
   </nz-form-item>
-  <nz-form-item nz-row class="register-area">
+  <nz-form-item>
     <nz-form-control [nzSpan]="14" [nzOffset]="6">
-      <button nz-button nzType="primary">修改</button>
+      <button nz-button>提交</button>
     </nz-form-control>
   </nz-form-item>
 </form>
