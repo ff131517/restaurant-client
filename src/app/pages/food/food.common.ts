@@ -5,11 +5,19 @@ export enum FoodType {
   Guangdong = 3
 }
 export class Food {
-  name = "";
+  constructor(param?: Food) {
+    this.name = param.name;
+    this.id = param.id;
+    this.imgUrl = param.imgUrl;
+    this.price = param.price;
+    this.desc = param.desc;
+    this.type = param.type;
+  }
+  name = '';
   id = 0;
-  imgUrl = "";
+  imgUrl = '';
   price = 0;
-  desc = "";
+  desc = '';
   // tag: string[] = []; //凉菜 热门个
-  type:FoodType = 0; //枚举
+  type: FoodType = 0; // 枚举
 }

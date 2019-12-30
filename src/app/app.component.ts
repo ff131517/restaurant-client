@@ -7,9 +7,9 @@ import { NzIconService } from 'ng-zorro-antd/icon';
 })
 export class AppComponent {
   isCollapsed = false;
-  constructor(private _iconService: NzIconService) {
-    //添加字体图标
-    this._iconService.fetchFromIconfont({
+  constructor(private iconService: NzIconService) {
+    // 添加字体图标
+    this.iconService.fetchFromIconfont({
       scriptUrl: 'https://at.alicdn.com/t/font_1385235_e0jskp8bxea.js'
     });
   }
